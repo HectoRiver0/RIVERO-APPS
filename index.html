@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7b1e23">
+  <meta name="description" content="Accesos académicos de Rivero Apps">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Rivero Apps</title>
+</head>
+<body>
+  <header class="hero">
+    <div class="brand">ACCESOS APP'S</div>
+    <div class="hero-content">
+      <h1>RIVERO APP'S</h1>
+      <span></span>
+      <p>Accesos académicos</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="quick-actions" id="quickActions"></section>
+
+    <section>
+      <div class="section-title">
+        <h2>Mis accesos</h2>
+        <button id="resetBtn" class="small-btn" title="Restablecer configuración">↺</button>
+      </div>
+      <div id="categories" class="category-grid"></div>
+    </section>
+
+    <section class="info-card">
+      <strong>Configuración rápida</strong>
+      <p>Los enlaces de cada botón se encuentran en <code>config.js</code>. Sustituye las URL de ejemplo por tus enlaces de Google Drive, Docs, Forms, Sites, Teams, etc.</p>
+    </section>
+  </main>
+
+  <footer>Rivero Apps · Accesos académicos</footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => navigator.serviceWorker.register("sw.js"));
+    }
+  </script>
+</body>
+</html>
